@@ -1,13 +1,10 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function NavBar() {
   const menu = useRef<HTMLDivElement>(null)
+  const mobileButtonOnClick = () => menu.current?.classList.toggle('hidden')
+  useEffect(() => menu.current?.classList.add('hidden'), [])
 
-  const mobileButtonOnClick = () => {
-    if (!menu.current) return
-    menu.current.classList.toggle('hidden')
-    console.log(menu, 'clicked')
-  }
   return (
     <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute">
       <div className="flex text-white justify-between px-8 md:px-16 py-8 text-xl">
@@ -35,9 +32,9 @@ export default function NavBar() {
               stroke="white"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
