@@ -1,21 +1,67 @@
+import { useRef } from 'react'
+
 export default function NavBar() {
+  const menu = useRef<HTMLDivElement>(null)
+
+  const mobileButtonOnClick = () => {
+    if (!menu.current) return
+    menu.current.classList.toggle('hidden')
+    console.log(menu, 'clicked')
+  }
   return (
     <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute">
-      <div className="flex text-white justify-between px-16 py-8 text-xl">
-        <nav>
-          <ul className="flex gap-6">
-            <li>LOGO</li>
-            <li>¿Por Que Revius?</li>
-            <li>Súmate a la comunidad</li>
-            <li>Lo más visto</li>
-          </ul>
+      <div className="flex text-white justify-between px-8 md:px-16 py-8 text-xl">
+        <a href="#">LOGO</a>
+        {/* First Nav */}
+        <nav className="hidden md:flex gap-6">
+          <a href="#">¿Por Que Revius?</a>
+          <a href="#">Súmate a la comunidad</a>
+          <a href="#">Lo más visto</a>
         </nav>
-        <nav>
-          <ul className="flex gap-6">
-            <li>Inicia Sesión</li>
-            <li>Registrate</li>
-          </ul>
+        {/* Second Nav */}
+        <nav className="hidden md:flex gap-6">
+          <a href="#">Inicia Sesión</a>
+          <a href="#">Registrate</a>
         </nav>
+
+        {/* Mobile Button */}
+        <div className="md:hidden flex items-center">
+          <button className="mobile-menu-button" onClick={mobileButtonOnClick}>
+            <svg
+              className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {/* Mobile Menu */}
+      <div
+        className="mobile-menu flex flex-col md:hidden text-white items-start justify-center px-6"
+        ref={menu}
+      >
+        <div className="flex flex-col gap-6 py-4">
+          {/* First Nav */}
+          <nav className="flex flex-col gap-6">
+            <a href="#">¿Por Que Revius?</a>
+            <a href="#">Súmate a la comunidad</a>
+            <a href="#">Lo más visto</a>
+          </nav>
+          {/* Second Nav */}
+          <nav className="flex flex-col gap-6">
+            <a href="#">Inicia Sesión</a>
+            <a href="#">Registrate</a>
+          </nav>
+        </div>
       </div>
     </header>
   )

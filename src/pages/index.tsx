@@ -13,7 +13,7 @@ export default function Home() {
       <NavBar />
       <main className="flex-grow">
         <section className="p-8 bg-gradient-to-r from-blue-700 to-blue-500 text-white min-h-screen flex justify-center items-center">
-          <h2 className="text-8xl font-bold text-center">
+          <h2 className="text-4xl md:text-8xl font-bold text-center">
             Revius.cl coming soon!
           </h2>
         </section>
