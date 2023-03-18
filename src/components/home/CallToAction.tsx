@@ -7,7 +7,7 @@ export default function CallToAction() {
         <h2 className="text-4xl md:text-6xl font-bold">
           Revius.cl coming soon!
         </h2>
-        <p>
+        <p className="font-light">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi
           cumque molestias veritatis magnam ipsum facilis explicabo delectus
           suscipit! Asperiores animi quam illo, voluptatibus aut repudiandae quo
