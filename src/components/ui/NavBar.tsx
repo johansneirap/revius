@@ -6,7 +6,7 @@ export default function NavBar() {
   useEffect(() => menu.current?.classList.add('hidden'), [])
 
   return (
-    <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute">
+    <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute top-0">
       <div className="flex text-white justify-between px-8 md:px-16 py-8 text-xl">
         <a href="#">LOGO</a>
         {/* First Nav */}
@@ -43,7 +43,7 @@ export default function NavBar() {
       </div>
       {/* Mobile Menu */}
       <div
-        className="mobile-menu flex flex-col md:hidden text-white items-start justify-center px-6"
+        className="mobile-menu flex flex-col md:hidden text-white items-start justify-center px-6 shadow-2xl"
         ref={menu}
       >
         <div className="flex flex-col gap-6 py-4">
