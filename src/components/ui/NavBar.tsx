@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import reviusLogo from '../../../public/revius-logo.svg'
 
 export default function NavBar() {
   const menu = useRef<HTMLDivElement>(null)
@@ -8,8 +10,10 @@ export default function NavBar() {
 
   return (
     <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute top-0">
-      <div className="flex text-white justify-between px-8 md:px-16 py-8 text-xl">
-        <a href="#">LOGO</a>
+      <div className="flex text-white justify-between items-center center px-8 md:px-28 py-3 text-xl">
+        <a href="#">
+          <Image src={reviusLogo} alt="" height={60} />
+        </a>
         {/* First Nav */}
         <nav className="hidden md:flex gap-6">
           <a href="#">¿Por Que Revius?</a>
@@ -56,8 +60,8 @@ export default function NavBar() {
           </nav>
           {/* Second Nav */}
           <nav className="flex flex-col gap-6">
-            <a href="#">Inicia Sesión</a>
-            <a href="#">Registrate</a>
+            <Link href="/login">Inicia sesión</Link>
+            <Link href="/register">Regístrate</Link>
           </nav>
         </div>
       </div>
