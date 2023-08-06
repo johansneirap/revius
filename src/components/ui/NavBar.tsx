@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
 export default function NavBar() {
@@ -17,8 +18,8 @@ export default function NavBar() {
         </nav>
         {/* Second Nav */}
         <nav className="hidden md:flex gap-6">
-          <a href="#">Inicia Sesión</a>
-          <a href="#">Registrate</a>
+          <Link href="/login">Inicia sesión</Link>
+          <Link href="/register">Regístrate</Link>
         </nav>
 
         {/* Mobile Button */}
