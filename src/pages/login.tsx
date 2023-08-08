@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import backgroundImage from '../../public/img/login-background.svg'
-// import Link from 'next/link'
-import reviusLogo from '../../public/revius-logo.svg'
 import { Button, Link } from '@nextui-org/react'
 import { Input } from '@nextui-org/react'
+import ReviusLogo from '@/components/ui/icons/ReviusLogo'
 const LoginBackground = () => {
   return (
     <Image
@@ -18,7 +17,7 @@ const LoginForm = () => {
   return (
     <div className="flex flex-col bg-white p-10 px-12 border-2 border-slate-800 rounded-sm shadow-2xl gap-6 self-center lg:w-[30vw]">
       <picture className="flex justify-center border-2 border-slate-800 shadow-md rounded-full p-4 self-center bg-gradient-to-br from-blue-700 to-blue-500">
-        <Image src={reviusLogo} alt="" height={80} />
+        <ReviusLogo height="80" width="80" />
       </picture>
       <h1 className="text-slate-700 font-bold text-xl">
         Inicia sesión en Revius

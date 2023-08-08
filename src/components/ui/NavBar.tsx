@@ -1,70 +1,105 @@
+import React from 'react'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  // Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenuItem,
+  NavbarMenu,
+  Input,
+} from '@nextui-org/react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { useEffect, useRef } from 'react'
-import reviusLogo from '../../../public/revius-logo.svg'
+// import { useEffect, useRef } from 'react'
+import { SearchIcon } from './icons/SearchIcon'
+import ReviusLogo from './icons/ReviusLogo'
 
 export default function NavBar() {
-  const menu = useRef<HTMLDivElement>(null)
-  const mobileButtonOnClick = () => menu.current?.classList.toggle('hidden')
-  useEffect(() => menu.current?.classList.add('hidden'), [])
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
+  const menuItems = [
+    'Profile',
+    'Dashboard',
+    'Activity',
+    'Analytics',
+    'System',
+    'Deployments',
+    'My Settings',
+    'Team Settings',
+    'Help & Feedback',
+    'Log Out',
+  ]
   return (
-    <header className="min-w-full bg-gradient-to-r from-blue-700 to-blue-500 absolute top-0">
-      <div className="flex text-white justify-between items-center center px-8 md:px-28 py-3 text-xl">
-        <a href="#">
-          <Image src={reviusLogo} alt="" height={60} />
-        </a>
-        {/* First Nav */}
-        <nav className="hidden md:flex gap-6">
-          <a href="#">¿Por Que Revius?</a>
-          <a href="#">Súmate a la comunidad</a>
-          <a href="#">Lo más visto</a>
-        </nav>
-        {/* Second Nav */}
-        <nav className="hidden md:flex gap-6">
-          <Link href="/login">Inicia sesión</Link>
-          <Link href="/register">Regístrate</Link>
-        </nav>
+    <Navbar
+      onMenuOpenChange={() => setIsMenuOpen}
+      className="bg-gradient-to-r from-blue-700 to-blue-500 text-slate-50"
+    >
+      <NavbarContent justify="center">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <ReviusLogo width="40" height="40" />
+        </NavbarBrand>
+      </NavbarContent>
 
-        {/* Mobile Button */}
-        <div className="md:hidden flex items-center">
-          <button className="mobile-menu-button" onClick={mobileButtonOnClick}>
-            <svg
-              className="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      {/* Mobile Menu */}
-      <div
-        className="mobile-menu flex flex-col md:hidden text-white items-start justify-center px-6 shadow-2xl"
-        ref={menu}
-      >
-        <div className="flex flex-col gap-6 py-4">
-          {/* First Nav */}
-          <nav className="flex flex-col gap-6">
-            <a href="#">¿Por Que Revius?</a>
-            <a href="#">Súmate a la comunidad</a>
-            <a href="#">Lo más visto</a>
-          </nav>
-          {/* Second Nav */}
-          <nav className="flex flex-col gap-6">
-            <Link href="/login">Inicia sesión</Link>
-            <Link href="/register">Regístrate</Link>
-          </nav>
-        </div>
-      </div>
-    </header>
+      <NavbarContent justify="center" className="hidden sm:flex gap-4">
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            ¿Por qué Revius?
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href="#" aria-current="page">
+            Únete a la comunidad
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Lo más visto
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <Input
+          classNames={{
+            base: 'max-w-full sm:max-w-[10rem]',
+            input: 'text-small',
+            inputWrapper:
+              'font-normal text-default-500 bg-slate-50 dark:bg-default-500/20',
+          }}
+          placeholder="Buscar..."
+          size="sm"
+          startContent={<SearchIcon size={18} />}
+          type="search"
+        />
+        <NavbarItem className="hidden lg:flex">
+          <Link href="/login">Inicia Sesión</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button
+            as={Link}
+            href="/register"
+            variant="bordered"
+            size="sm"
+            className="text-slate-50 rounded-sm"
+          >
+            Regístrate
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link className="w-full" href="#">
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   )
 }
