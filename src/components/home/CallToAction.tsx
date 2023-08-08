@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function CallToAction() {
   return (
-    <section className="md:pt-20 pt-2 md:pb-40 pb-[20px] px-6 md:px-32 mt-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white flex flex-col md:flex-row justify-between items-center rounded-bl-[100px]">
+    <section className="md:pt-20 pt-2 md:pb-40 pb-[20px] px-6 md:px-32 bg-gradient-to-r from-blue-700 to-blue-500 text-white flex flex-col md:flex-row justify-between items-center rounded-bl-[100px]">
       <div className=" md:w-[600px]">
         <h2 className="text-4xl md:text-6xl font-bold">
           Revius.cl coming soon!
