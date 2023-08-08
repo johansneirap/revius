@@ -8,14 +8,14 @@ const LoginBackground = () => {
     <Image
       src={backgroundImage}
       alt="background page"
-      className="min-h-screen min-w-screen absolute -z-10"
+      className="h-screen absolute -z-10 blur-md sm:blur-lg scale-105"
     />
   )
 }
 
 export function Login() {
   return (
-    <main className="flex justify-center align-middle">
+    <main className="flex justify-center align-middle h-screen w-screen overflow-hidden relative">
       <LoginBackground />
       <section className="gap-10 flex h-screen">
         {/* <div>
