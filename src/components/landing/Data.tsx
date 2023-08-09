@@ -1,8 +1,8 @@
 import {
   // FaceSmileIcon,
-  DevicePhoneMobileIcon,
-  AdjustmentsHorizontalIcon,
-  SunIcon,
+  // DevicePhoneMobileIcon,
+  // AdjustmentsHorizontalIcon,
+  // SunIcon,
   UserGroupIcon,
   ClockIcon,
   ScaleIcon,

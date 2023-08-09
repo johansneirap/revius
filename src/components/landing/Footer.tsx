@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import React from 'react'
 import Container from './Container'
 import ReviusLogo from '../ui/icons/ReviusLogo'
@@ -18,13 +17,6 @@ export default function Footer() {
                 href="/"
                 className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100"
               >
-                {/* <Image
-                  src="/img/logo.svg"
-                  alt="N"
-                  width="32"
-                  height="32"
-                  className="w-8"
-                /> */}
                 <ReviusLogo width="32" height="32" />
                 <span>Revius</span>
               </Link>

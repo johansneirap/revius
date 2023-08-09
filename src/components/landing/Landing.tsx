@@ -4,11 +4,11 @@ import Navbar from './Navbar'
 import SectionTitle from './sectionTitle'
 
 import { benefitOne, benefitTwo } from './Data'
-import Video from './Video'
+// import Video from './Video'
 import Benefits from './Benefits'
 import Footer from './Footer'
 // import Testimonials from './Testimonials'
-import Cta from './Cta'
+import CallToAction from './CallToAction'
 // import Faq from './Faq'
 // import PopupWidget from './popupWidget'
 
@@ -59,7 +59,7 @@ const Landing = () => {
         conversion rate as well as support or chat requests.
       </SectionTitle>
       <Faq /> */}
-      <Cta />
+      <CallToAction />
       <Footer />
       {/* <PopupWidget /> */}
     </>

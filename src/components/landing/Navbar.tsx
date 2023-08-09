@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import ThemeChanger from './DarkSwitch'
-import Image from 'next/image'
 import { Disclosure } from '@headlessui/react'
 import ReviusLogo from '../ui/icons/ReviusLogo'
 
@@ -18,13 +17,6 @@ const Navbar = () => {
                 <Link href="/">
                   <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                     <span>
-                      {/* <Image
-                        src="/img/logo.svg"
-                        alt="N"
-                        width="32"
-                        height="32"
-                        className="w-8"
-                      /> */}
                       <ReviusLogo width="32" height="32" />
                     </span>
                     <span>Revius</span>
