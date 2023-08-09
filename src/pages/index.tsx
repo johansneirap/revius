@@ -1,6 +1,7 @@
-import CallToAction from '@/components/home/CallToAction'
-import FeatureCards from '@/components/home/FeatureCards'
-import NavBar from '@/components/ui/NavBar'
+// import CallToAction from '@/components/home/CallToAction'
+// import FeatureCards from '@/components/home/FeatureCards'
+// import NavBar from '@/components/ui/NavBar'
+import Landing from '@/components/landing/Landing'
 import Head from 'next/head'
 
 export default function Home() {
@@ -12,11 +13,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <Landing />
+      {/* <NavBar />
       <main className="flex-grow">
         <CallToAction />
         <FeatureCards />
-      </main>
+      </main> */}
     </>
   )
 }
