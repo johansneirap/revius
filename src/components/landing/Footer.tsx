@@ -58,39 +58,26 @@ export default function Footer() {
           <div className="">
             <div>Síguenos</div>
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
-              <a href="#" target="_blank" rel="noopener">
+              <a href="#" rel="noopener">
                 <span className="sr-only">Twitter</span>
                 <Twitter />
               </a>
-              <a href="#" target="_blank" rel="noopener">
+              <a href="#" rel="noopener">
                 <span className="sr-only">Facebook</span>
                 <Facebook />
               </a>
-              <a href="#" target="_blank" rel="noopener">
+              <a href="#" rel="noopener">
                 <span className="sr-only">Instagram</span>
                 <Instagram />
               </a>
-              <a href="#" target="_blank" rel="noopener">
+              <a href="#" rel="noopener">
                 <span className="sr-only">Linkedin</span>
                 <Linkedin />
               </a>
             </div>
           </div>
         </div>
-
-        {/* <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with ♥ by{' '}
-          <a href="https://web3templates.com/" target="_blank" rel="noopener">
-            Web3Templates.
-          </a>{' '}
-          Illustrations from{' '}
-          <a href="https://www.glazestock.com/" target="_blank" rel="noopener ">
-            Glazestock
-          </a>
-        </div> */}
       </Container>
-      {/* Do not remove this */}
-      {/* <Backlink /> */}
     </div>
   )
 }
