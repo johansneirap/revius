@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Hero from './Hero'
 import Navbar from './Navbar'
-import SectionTitle from './SectionTitle'
 
 import { benefitOne, benefitTwo } from './Data'
 // import Video from './Video'
@@ -9,6 +8,7 @@ import Benefits from './Benefits'
 import Footer from './Footer'
 // import Testimonials from './Testimonials'
 import CallToAction from './CallToAction'
+import SectionTitle from './SectionTitle'
 // import Faq from './Faq'
 // import PopupWidget from './popupWidget'
 
