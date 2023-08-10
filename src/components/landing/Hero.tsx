@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Container from './Container'
-import heroImg from '../../../public/img/hero.png'
+// import heroImg from '../../../public/img/hero.png'
+import heroImg from '../../../public/icons/undraw_feedback.svg'
 
 const Hero = () => {
   return (
@@ -38,6 +39,7 @@ const Hero = () => {
               alt="Hero Illustration"
               loading="eager"
               placeholder="blur"
+              blurDataURL="a"
             />
           </div>
         </div>
