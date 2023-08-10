@@ -2,12 +2,16 @@ import Link from 'next/link'
 import ThemeChanger from './DarkSwitch'
 import { Disclosure } from '@headlessui/react'
 import ReviusLogo from '../ui/icons/ReviusLogo'
+import { Button, useDisclosure } from '@nextui-org/react'
+import RegisterModal from '../modals/RegisterModal'
 
+const navigation = ['APP', 'Características', 'Contacto']
 const Navbar = () => {
-  const navigation = ['APP', 'Características', 'Contacto']
-
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
     <div className="w-full">
+      <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
+
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
@@ -59,12 +63,12 @@ const Navbar = () => {
                         {item}
                       </Link>
                     ))}
-                    <Link
-                      href="/"
+                    <Button
+                      onPress={onOpen}
                       className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
                     >
                       Regístrate
-                    </Link>
+                    </Button>
                   </>
                 </Disclosure.Panel>
               </div>
@@ -89,12 +93,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link
-            href="/"
-            className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
+          <Button
+            onPress={onOpen}
+            className="px-6 text-white bg-indigo-600 rounded-md md:ml-5"
           >
             Regístrate
-          </Link>
+          </Button>
 
           <ThemeChanger />
         </div>
