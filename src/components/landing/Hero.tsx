@@ -2,10 +2,14 @@ import Image from 'next/image'
 import Container from './Container'
 // import heroImg from '../../../public/img/hero.png'
 import heroImg from '../../../public/icons/undraw_feedback.svg'
+import RegisterModal from '../modals/RegisterModal'
+import { Button, useDisclosure } from '@nextui-org/react'
 
 const Hero = () => {
+  const { isOpen, onOpenChange, onOpen } = useDisclosure()
   return (
     <>
+      <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
       <Container className="flex flex-wrap ">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
@@ -19,13 +23,13 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
-              <a
-                href="#"
+              <Button
+                onPress={onOpen}
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md "
               >
                 Únete a la comunidad
-              </a>
+              </Button>
             </div>
           </div>
         </div>
