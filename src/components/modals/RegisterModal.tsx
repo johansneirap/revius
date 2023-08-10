@@ -23,7 +23,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">
-              Regístrate en Revius
+              ¡Estás a un paso de ser un Reviuer! 🎉
             </ModalHeader>
             <ModalBody>
               <Input
@@ -93,7 +93,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
                 onPress={onClose}
                 className="text-lg font-medium text-center text-white bg-indigo-600 rounded-md px-7 lg:px-10 lg:py-5 "
               >
-                Sign in
+                Registrar
               </Button>
             </ModalFooter>
           </>
