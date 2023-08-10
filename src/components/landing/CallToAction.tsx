@@ -1,6 +1,6 @@
 import React from 'react'
-import Container from './Container'
 import { Button, useDisclosure } from '@nextui-org/react'
+import Container from './Container'
 import RegisterModal from '../modals/RegisterModal'
 
 const CallToAction = () => {

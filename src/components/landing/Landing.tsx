@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Hero from './Hero'
 import Navbar from './Navbar'
-import SectionTitle from './sectionTitle'
+import SectionTitle from './SectionTitle'
 
 import { benefitOne, benefitTwo } from './Data'
 // import Video from './Video'
@@ -61,7 +61,6 @@ const Landing = () => {
       <Faq /> */}
       <CallToAction />
       <Footer />
-      {/* <PopupWidget /> */}
     </>
   )
 }
