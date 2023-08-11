@@ -4,6 +4,7 @@ import { Disclosure } from '@headlessui/react'
 import ReviusLogo from '../ui/icons/ReviusLogo'
 import { Button, useDisclosure } from '@nextui-org/react'
 import RegisterModal from '../modals/RegisterModal'
+import LoginModal from '../modals/LoginModal'
 
 const navigation = ['APP', 'Características', 'Contacto']
 const Navbar = () => {
@@ -11,6 +12,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
+      {/* <LoginModal/> */}
 
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
@@ -98,6 +100,12 @@ const Navbar = () => {
             className="px-6 text-white bg-indigo-600 rounded-md md:ml-5"
           >
             Regístrate
+          </Button>
+          <Button
+                      // onPress={onOpen}
+            className="px-6 text-white bg-indigo-600 rounded-md md:ml-5"
+          >
+            Iniciar Sesión
           </Button>
 
           <ThemeChanger />
