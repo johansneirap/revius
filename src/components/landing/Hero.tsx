@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Container from './Container'
-// import heroImg from '../../../public/img/hero.png'
-import heroImg from '../../../public/icons/undraw_feedback.svg'
+import heroImg from '../../../public/img/undraw/feedback.svg'
 import RegisterModal from '../modals/RegisterModal'
 import { Button, useDisclosure } from '@nextui-org/react'
 

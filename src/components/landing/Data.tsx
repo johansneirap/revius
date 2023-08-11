@@ -1,8 +1,4 @@
 import {
-  // FaceSmileIcon,
-  // DevicePhoneMobileIcon,
-  // AdjustmentsHorizontalIcon,
-  // SunIcon,
   UserGroupIcon,
   ClockIcon,
   ScaleIcon,
@@ -11,10 +7,8 @@ import {
   ArrowsRightLeftIcon,
 } from '@heroicons/react/24/solid'
 
-// import benefitOneImg from '../../../public/img/benefit-one.png'
-// import benefitOneImg from '../../../public/img/benefit-two.png'
-import benefitOneImg from '../../../public/img/undraw_reviews.svg'
-import benefitTwoImg from '../../../public/img/undraw_window_shopping.svg'
+import benefitOneImg from '../../../public/img/undraw/reviews.svg'
+import benefitTwoImg from '../../../public/img/undraw/window_shopping.svg'
 
 const benefitOne = {
   title: 'Lo que buscas en un solo lugar.',
