@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import ThemeChanger from './DarkSwitch'
+import { Button, useDisclosure } from '@nextui-org/react'
 import { Disclosure } from '@headlessui/react'
 import ReviusLogo from '../ui/icons/ReviusLogo'
-import { Button, useDisclosure } from '@nextui-org/react'
+import ThemeChanger from './ThemeChanger'
 import RegisterModal from '../modals/RegisterModal'
 
 const navigation = ['APP', 'Características', 'Contacto']

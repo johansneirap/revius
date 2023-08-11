@@ -18,7 +18,12 @@ import React from 'react'
 
 const RegisterModal = ({ isOpen, onOpenChange }: any) => {
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="auto">
+    <Modal
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+      placement="auto"
+      backdrop="blur"
+    >
       <ModalContent>
         {(onClose) => (
           <>
