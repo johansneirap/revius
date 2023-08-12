@@ -1,102 +1,119 @@
 import React from 'react'
+import Link from 'next/link'
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  // Link,
   Button,
   NavbarMenuToggle,
   NavbarMenuItem,
   NavbarMenu,
   Input,
 } from '@nextui-org/react'
-import Link from 'next/link'
-// import { useEffect, useRef } from 'react'
-import { SearchIcon } from './icons/SearchIcon'
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import ReviusLogo from './icons/ReviusLogo'
+
+const menuItems = [
+  { label: 'Perfil', type: 'link', variant: 'primary' },
+  { label: 'Mi Configuración', type: 'link', variant: 'primary' },
+  { label: 'Actividad', type: 'link', variant: 'primary' },
+  { label: 'Ayuda y Feedback', type: 'link', variant: 'primary' },
+  {
+    label: 'Inicia sesión',
+    type: 'button',
+    color: 'primary',
+    variant: 'solid',
+  },
+  {
+    label: 'Regístrarse',
+    type: 'button',
+    color: 'primary',
+    variant: 'bordered',
+  },
+] as const
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-  const menuItems = [
-    'Profile',
-    'Dashboard',
-    'Activity',
-    'Analytics',
-    'System',
-    'Deployments',
-    'My Settings',
-    'Team Settings',
-    'Help & Feedback',
-    'Log Out',
-  ]
   return (
     <Navbar
+      isBordered
+      className="shadow-md"
+      maxWidth="xl"
       onMenuOpenChange={() => setIsMenuOpen}
-      className="bg-gradient-to-r from-blue-700 to-blue-500 text-slate-50"
     >
-      <NavbarContent justify="center">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden"
-        />
+      <NavbarContent justify="start">
         <NavbarBrand>
-          <ReviusLogo width="40" height="40" />
+          <Link href="/" className="flex items-end gap-1">
+            <ReviusLogo width="2em" height="2em" />
+            <span className="font-bold text-primary-500 leading-none text-xl">
+              REVIUS
+            </span>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent justify="center" className="hidden sm:flex gap-4">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            ¿Por qué Revius?
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="#" aria-current="page">
-            Únete a la comunidad
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Lo más visto
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent justify="center" className="hidden sm:flex w-96">
         <Input
           classNames={{
-            base: 'max-w-full sm:max-w-[10rem]',
+            base: 'max-w-full',
             input: 'text-small',
             inputWrapper:
               'font-normal text-default-500 bg-slate-50 dark:bg-default-500/20',
           }}
-          placeholder="Buscar..."
-          size="sm"
-          startContent={<SearchIcon size={18} />}
+          placeholder="Encuentra productos y servicios"
+          size="md"
+          variant="bordered"
+          color="primary"
+          startContent={<MagnifyingGlassIcon height={16} />}
           type="search"
         />
-        <NavbarItem className="hidden lg:flex">
-          <Link href="/login">Inicia Sesión</Link>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden sm:flex">
+          <Button variant="solid" color="primary" href="/login">
+            Inicia Sesión
+          </Button>
         </NavbarItem>
-        <NavbarItem>
+
+        <NavbarItem className="hidden sm:flex">
           <Button
             as={Link}
-            href="/register"
+            href="/"
             variant="bordered"
-            size="sm"
-            className="text-slate-50 rounded-sm"
+            color="primary"
+            size="md"
           >
             Regístrate
           </Button>
+        </NavbarItem>
+
+        <NavbarItem>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            className="sm:hidden"
+          />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full" href="#">
-              {item}
-            </Link>
+            {item.type === 'button' ? (
+              <Button
+                color="primary"
+                variant={item.variant ?? 'solid'}
+                className="w-full"
+                size="sm"
+              >
+                <Link href="#">{item.label}</Link>
+              </Button>
+            ) : (
+              <Link className="w-full" href="#">
+                {item.label}
+              </Link>
+            )}
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
