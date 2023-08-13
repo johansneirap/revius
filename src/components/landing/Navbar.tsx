@@ -54,7 +54,7 @@ const Navbar = () => {
                   </svg>
                 </Disclosure.Button>
 
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden bg-white dark:bg-trueGray-900 backdrop-filter backdrop-blur-lg bg-opacity-30">
+                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
                       <Link
