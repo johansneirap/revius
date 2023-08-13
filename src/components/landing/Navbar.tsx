@@ -9,17 +9,19 @@ const navigation = ['APP', 'Características', 'Contacto']
 const Navbar = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
-    <div className="w-full">
+    <div
+      className="w-full sticky top-0 bg-white dark:bg-trueGray-900 backdrop-filter backdrop-blur-lg bg-opacity-30
+    z-40 border-b border-gray-200 dark:border-none py-2"
+    >
       <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
-
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+      <nav className="container flex flex-wrap items-center justify-between px-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto first-letter:bg-white">
                 <Link href="/">
-                  <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
+                  <span className="flex items-center space-x-2 text-2xl font-medium text-primary-500 dark:text-gray-100">
                     <span>
                       <ReviusLogo width="32" height="32" />
                     </span>
@@ -29,7 +31,7 @@ const Navbar = () => {
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
+                  className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-primary-500 focus:text-primary-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
                 >
                   <svg
                     className="w-6 h-6 fill-current"
@@ -58,14 +60,14 @@ const Navbar = () => {
                       <Link
                         key={index}
                         href="/"
-                        className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                        className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary-500 focus:text-primary-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
                       >
                         {item}
                       </Link>
                     ))}
                     <Button
                       onPress={onOpen}
-                      className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
+                      className="w-full px-6 py-2 mt-3 text-center text-white bg-primary-500 rounded-md lg:ml-5"
                     >
                       Regístrate
                     </Button>
@@ -83,7 +85,7 @@ const Navbar = () => {
               <li className="mr-3 nav__item" key={index}>
                 <Link
                   href="/"
-                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-primary-500 focus:text-primary-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
                   {menu}
                 </Link>
@@ -95,7 +97,8 @@ const Navbar = () => {
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <Button
             onPress={onOpen}
-            className="px-6 text-white bg-indigo-600 rounded-md md:ml-5"
+            className="px-6 dark:px-6 text-white bg-primary-500 rounded-md md:ml-5"
+            size="sm"
           >
             Regístrate
           </Button>

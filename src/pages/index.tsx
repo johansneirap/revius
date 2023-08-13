@@ -1,9 +1,6 @@
-// import CallToAction from '@/components/home/CallToAction'
-// import FeatureCards from '@/components/home/FeatureCards'
-// import NavBar from '@/components/ui/NavBar'
 import Landing from '@/components/landing/Landing'
 import Head from 'next/head'
-
+import 'atropos/css'
 export default function Home() {
   return (
     <>
@@ -14,11 +11,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Landing />
-      {/* <NavBar />
-      <main className="flex-grow">
-        <CallToAction />
-        <FeatureCards />
-      </main> */}
     </>
   )
 }

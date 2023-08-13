@@ -25,7 +25,7 @@ const Hero = () => {
               <Button
                 onPress={onOpen}
                 rel="noopener"
-                className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md "
+                className="px-8 py-4 text-lg font-medium text-center text-white bg-primary-500 rounded-md "
               >
                 Únete a la comunidad
               </Button>
@@ -51,7 +51,7 @@ const Hero = () => {
         {/* <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
             Basada en la
-            <span className="text-indigo-600"> Comunidad. </span>
+            <span className="text-primary-500"> Comunidad. </span>
             Sin intermediarios, sesgos, ni mano negra.
           </div>
 

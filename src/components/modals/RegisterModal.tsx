@@ -28,7 +28,10 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">
-              ¡Estás a un paso de ser un Reviuer! 🎉
+              <p>
+                ¡Estás a un paso de ser un
+                <span className="text-primary-500"> Reviuer</span>! 🎉
+              </p>
             </ModalHeader>
             <ModalBody>
               <Input
@@ -42,6 +45,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
                 label="Nombre"
                 placeholder="Ingresa tu nombre"
                 variant="bordered"
+                color="primary"
               />
               <Input
                 endContent={
@@ -53,6 +57,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
                 label="Correo electrónico"
                 placeholder="Ingresa tu correo electrónico"
                 variant="bordered"
+                color="primary"
               />
               <Input
                 endContent={
@@ -65,6 +70,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
                 placeholder="****"
                 type="password"
                 variant="bordered"
+                color="primary"
               />
               <Input
                 endContent={
@@ -77,6 +83,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
                 placeholder="****"
                 type="password"
                 variant="bordered"
+                color="primary"
                 description="La contraseña debe tener entre 8 y 12 caracteres"
               />
               {/* <div className="flex py-2 px-1 justify-between">
@@ -96,7 +103,7 @@ const RegisterModal = ({ isOpen, onOpenChange }: any) => {
               <Button
                 color="primary"
                 onPress={onClose}
-                className="text-lg font-medium text-center text-white bg-indigo-600 rounded-md px-7 lg:px-10 lg:py-5 "
+                className="text-lg font-medium text-center text-white bg-primary-500 rounded-md px-7 lg:px-10 lg:py-5 "
               >
                 Registrar
               </Button>
