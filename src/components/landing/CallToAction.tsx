@@ -8,8 +8,12 @@ import cloudyBg from '../../../public/img/cloudy-bg.svg'
 
 const CallToAction = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const atroposProps = {
+    shadow: false,
+    highlight: false,
+  }
   return (
-    <Atropos className="my-atropos" shadow={false} highlight={false}>
+    <Atropos className="my-atropos" {...atroposProps}>
       <Container>
         <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
         <div className="flex flex-wrap items-center justify-between max-w-4xl gap-5 mx-auto text-white bg-primary-500 px-7 py-7 lg:px-12 lg:py-12 lg:flex-nowrap rounded-xl relative overflow-hidden border border-primary-500">
