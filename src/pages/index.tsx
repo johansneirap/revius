@@ -1,3 +1,4 @@
+import { HeroHomePage } from '@/components/ui/HeroHomePage'
 import NavBar from '@/components/ui/NavBar'
 import Head from 'next/head'
 
@@ -12,9 +13,9 @@ export default function Home() {
       </Head>
       <NavBar />
       <main className="w-full flex-row relative no-wrap">
-        <section className="max-w-[1280px] px-6 m-auto mt-4">
-          <h1>Home Page</h1>
-        </section>
+        {/* <section className="max-w-[1280px] px-6 m-auto mt-4"> */}
+          <HeroHomePage/>
+        {/* </section> */}
       </main>
     </>
   )

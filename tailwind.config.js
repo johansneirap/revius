@@ -17,6 +17,7 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
+      montserrat : ['Montserrat', ...defaultTheme.fontFamily.sans],
     },
   },
   darkMode: "class",
