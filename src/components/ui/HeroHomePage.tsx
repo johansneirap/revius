@@ -1,5 +1,4 @@
 import React from 'react'
-import  Container  from '../landing/Container'
 import { Input } from '@nextui-org/react'
 
 export const HeroHomePage = () => {
