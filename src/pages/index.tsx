@@ -1,7 +1,30 @@
 import NavBar from '@/components/ui/NavBar'
 import Head from 'next/head'
-
-export default function Home() {
+import { useEffect } from 'react'
+interface User {
+  firstName: string
+  lastName: string
+  email: string
+}
+interface SessionUser {
+  user: User
+  accesstoken: string
+}
+interface Props {
+  user: string | null
+}
+export default function Home({ user = null }: Props) {
+  const sessionUser: SessionUser = JSON.parse(user ?? '{}')
+  // TODO: this should be refactored to a hook like "useSession"
+  //? possible refactor to use next-auth
+  useEffect(() => {
+    if (!sessionUser) return
+    localStorage.setItem('revius-auth-user', JSON.stringify(sessionUser.user))
+    localStorage.setItem(
+      'revius-auth-accesstoken',
+      JSON.stringify(sessionUser.accesstoken)
+    )
+  }, [sessionUser])
   return (
     <>
       <Head>
@@ -18,4 +41,12 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getServerSideProps(context: any) {
+  return {
+    props: {
+      user: context.req.cookies['revius-auth-user'] ?? null,
+    },
+  }
 }

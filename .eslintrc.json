@@ -6,7 +6,10 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "ignoreRestSiblings": true }
+    ],
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-var-requires": 0
   }

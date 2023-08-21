@@ -73,9 +73,11 @@ export default function NavBar() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Button variant="solid" color="primary" href="/login">
-            Inicia Sesión
-          </Button>
+          <Link href="/login">
+            <Button variant="solid" color="primary">
+              Inicia Sesión
+            </Button>
+          </Link>
         </NavbarItem>
 
         <NavbarItem className="hidden sm:flex">
