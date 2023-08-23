@@ -1,11 +1,8 @@
 import { Button } from '@nextui-org/react'
-import Link from 'next/link'
-export default function FacebookButton() {
+export default function FacebookButton({ onClick }: { onClick: () => void }) {
   return (
-    <Link className="w-full" href="http://localhost:3001/auth/facebook">
-      <Button color="primary" fullWidth>
-        Continua con Facebook
-      </Button>
-    </Link>
+    <Button color="primary" onClick={onClick} fullWidth>
+      Continua con Facebook
+    </Button>
   )
 }

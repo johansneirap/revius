@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Button, useDisclosure } from '@nextui-org/react'
 import { Disclosure } from '@headlessui/react'
 import ReviusLogo from '../ui/icons/ReviusLogo'
-import ThemeChanger from './ThemeChanger'
+import ThemeChanger from '../ui/ThemeChanger'
 import RegisterModal from '../modals/RegisterModal'
 
 const navigation = ['APP', 'Características', 'Contacto']
