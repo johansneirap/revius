@@ -12,7 +12,10 @@ import {
   Input,
 } from '@nextui-org/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
+import { useSession, signOut } from 'next-auth/react'
+
 import ReviusLogo from './icons/ReviusLogo'
+import ThemeChanger from './ThemeChanger'
 
 const menuItems = [
   { label: 'Perfil', type: 'link', variant: 'primary' },
@@ -32,6 +35,23 @@ const menuItems = [
     variant: 'bordered',
   },
 ] as const
+
+const AuthButton = () => {
+  const { data: session } = useSession()
+  if (session === null)
+    return (
+      <Link href="/login">
+        <Button variant="solid" color="primary">
+          Inicia Sesión
+        </Button>
+      </Link>
+    )
+  return (
+    <Button variant="bordered" color="primary" onClick={() => signOut()}>
+      Cerrar Sesión
+    </Button>
+  )
+}
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -73,12 +93,18 @@ export default function NavBar() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Button variant="solid" color="primary" href="/login">
-            Inicia Sesión
-          </Button>
+          {/* <Link href="/login">
+            <Button variant="solid" color="primary">
+              Inicia Sesión
+            </Button>
+          </Link> */}
+          <AuthButton />
+        </NavbarItem>
+        <NavbarItem>
+          <ThemeChanger />
         </NavbarItem>
 
-        <NavbarItem className="hidden sm:flex">
+        {/* <NavbarItem className="hidden sm:flex">
           <Button
             as={Link}
             href="/"
@@ -88,7 +114,7 @@ export default function NavBar() {
           >
             Regístrate
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
 
         <NavbarItem>
           <NavbarMenuToggle
