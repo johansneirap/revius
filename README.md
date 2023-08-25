@@ -6,6 +6,8 @@
 </p>
 
 ## Tech stack
+
+- Node v16.14+
 - Typescript
 - NextJS
 - NextUI
@@ -14,6 +16,7 @@
 ## Getting Started
 
 Primero, inicia el servidor de desarrollo:
+
 ```bash
 npm run dev
 # or
@@ -23,5 +26,3 @@ pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador preferido para ver el resultado
-
-
