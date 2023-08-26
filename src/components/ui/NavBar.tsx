@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   Navbar,
@@ -13,26 +14,37 @@ import {
 } from '@nextui-org/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import { useSession, signOut } from 'next-auth/react'
-
-import ReviusLogo from './icons/ReviusLogo'
+import reviusLogo from '../../../public/img/logos/revius-banner.svg'
 import ThemeChanger from './ThemeChanger'
 
 const menuItems = [
-  { label: 'Perfil', type: 'link', variant: 'primary' },
-  { label: 'Mi Configuración', type: 'link', variant: 'primary' },
-  { label: 'Actividad', type: 'link', variant: 'primary' },
-  { label: 'Ayuda y Feedback', type: 'link', variant: 'primary' },
+  { label: 'Perfil', type: 'link', variant: 'primary', href: '/profile' },
+  {
+    label: 'Mi Configuración',
+    type: 'link',
+    variant: 'primary',
+    href: '/ajustes',
+  },
+  { label: 'Actividad', type: 'link', variant: 'primary', href: '/actividad' },
+  {
+    label: 'Ayuda y Feedback',
+    type: 'link',
+    variant: 'primary',
+    href: '/ayuda',
+  },
   {
     label: 'Inicia sesión',
     type: 'button',
     color: 'primary',
     variant: 'solid',
+    href: '/login',
   },
   {
     label: 'Regístrarse',
     type: 'button',
     color: 'primary',
     variant: 'bordered',
+    href: '/register',
   },
 ] as const
 
@@ -66,7 +78,7 @@ export default function NavBar() {
       <NavbarContent justify="start">
         <NavbarBrand>
           <Link href="/" className="flex items-end gap-1">
-            <ReviusLogo width="2em" height="2em" />
+            <Image src={reviusLogo} alt="revius logo" />
             <span className="font-bold text-primary-500 leading-none text-xl">
               REVIUS
             </span>
@@ -119,24 +131,26 @@ export default function NavBar() {
         <NavbarItem>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            className="sm:hidden"
+            className="sm:hidden h-6"
           />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={item.label}>
             {item.type === 'button' ? (
-              <Button
-                color="primary"
-                variant={item.variant ?? 'solid'}
-                className="w-full"
-                size="sm"
-              >
-                <Link href="#">{item.label}</Link>
-              </Button>
+              <Link href={item.href}>
+                <Button
+                  color="primary"
+                  variant={item.variant ?? 'solid'}
+                  className="w-full"
+                  size="sm"
+                >
+                  {item.label}
+                </Button>
+              </Link>
             ) : (
-              <Link className="w-full" href="#">
+              <Link className="w-full" href={item.href}>
                 {item.label}
               </Link>
             )}

@@ -1,17 +1,17 @@
+import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 import { Button, Checkbox, Divider, Input, Link } from '@nextui-org/react'
 import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/solid'
 import FacebookButton from '@/components/login/facebook-btn'
 import GoogleButton from '@/components/login/google-btn'
-import ReviusLogo from '@/components/ui/icons/ReviusLogo'
-
+import reviusLogo from '../../public/img/logos/revius-banner.svg'
 const Login = () => {
   return (
     <div className="grid md:grid-cols-2 grid-rows-0 gap-0 h-screen">
       <aside className="h-full p-6 flex flex-col justify-between">
         <header className="flex text-lg font-semibold text-primary-500">
           <Link href="/" className="flex items-end gap-1">
-            <ReviusLogo width="2em" height="2em" />
+            <Image src={reviusLogo} alt="revius logo" />
             <span className="font-bold text-primary-500 leading-none text-xl">
               REVIUS
             </span>
