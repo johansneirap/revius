@@ -44,7 +44,7 @@ const menuItems = [
     type: 'button',
     color: 'primary',
     variant: 'bordered',
-    href: '/register',
+    href: '/registro',
   },
 ] as const
 

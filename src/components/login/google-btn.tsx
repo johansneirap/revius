@@ -11,7 +11,7 @@ export default function GoogleButton({ onClick }: { onClick: () => void }) {
       fullWidth
     >
       <Image src={googleIcon} height={24} width={24} alt="google icon" />
-      Continua con Google
+      Continúa con Google
     </Button>
   )
 }

@@ -11,7 +11,7 @@ export default function FacebookButton({ onClick }: { onClick: () => void }) {
       fullWidth
     >
       <Image src={fbIcon} height={24} width={24} alt="Facebook icon" />
-      Continua con Facebook
+      Continúa con Facebook
     </Button>
   )
 }
