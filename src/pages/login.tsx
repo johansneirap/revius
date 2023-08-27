@@ -91,7 +91,7 @@ const Login = () => {
               <Divider />
               <div className="flex flex-col py-4 gap-3">
                 <p className="font-light text-sm md:text-md text-slate-500">
-                  O si prefieres:
+                  Si lo prefieres:
                 </p>
                 <GoogleButton
                   onClick={() => signIn('google', { callbackUrl: '/' })}
