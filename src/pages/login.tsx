@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 import { Button, Checkbox, Divider, Input, Link } from '@nextui-org/react'
@@ -5,7 +6,7 @@ import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/solid'
 import FacebookButton from '@/components/login/facebook-btn'
 import GoogleButton from '@/components/login/google-btn'
 import reviusLogo from '../../public/img/logos/revius-banner.svg'
-import Head from 'next/head'
+
 const Login = () => {
   return (
     <>
@@ -92,8 +93,12 @@ const Login = () => {
                 <p className="font-light text-sm md:text-md text-slate-500">
                   O si prefieres:
                 </p>
-                <GoogleButton onClick={() => signIn('google')} />
-                <FacebookButton onClick={() => signIn('facebook')} />
+                <GoogleButton
+                  onClick={() => signIn('google', { callbackUrl: '/' })}
+                />
+                <FacebookButton
+                  onClick={() => signIn('facebook', { callbackUrl: '/' })}
+                />
               </div>
               <div className="flex py-2 px-1 justify-center gap-2 text-xs md:text-sm">
                 <p className="text-xs md:text-sm font-light text-slate-500">

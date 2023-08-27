@@ -40,7 +40,7 @@ const options = {
       clientSecret: String(process.env.GOOGLE_SECRET),
     }),
   ],
-  pages: { signIn: 'login' },
+  pages: { signIn: '/login' },
   secret: process.env.JWT_SECRET,
   callbacks,
 }
