@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReviusLogo = ({ height = '100', width = '100' }) => {
+const ReviusLogo = ({ height = '100%', width = '100%' }) => {
   return (
     <svg
       width={width}
