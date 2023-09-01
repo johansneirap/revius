@@ -16,11 +16,11 @@ const CallToAction = () => {
     <Atropos className="my-atropos" {...atroposProps}>
       <Container>
         <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
-        <div className="flex flex-wrap items-center justify-between max-w-4xl gap-5 mx-auto text-white bg-primary-500 px-7 py-7 lg:px-12 lg:py-12 lg:flex-nowrap rounded-xl relative overflow-hidden border border-primary-500">
+        <div className="flex flex-wrap items-center justify-between max-w-4xl gap-5 mx-auto text-white bg-[#0070EF] sm:bg-primary-500 px-7 py-7 lg:px-12 lg:py-12 lg:flex-nowrap rounded-xl relative overflow-hidden border border-primary-500">
           <Image
             src={cloudyBg}
             alt="aa"
-            className="absolute z-0 left-0 -top-26 object-fill"
+            className="absolute z-0 left-0 bottom-0 sm:bottom-auto sm:-top-26 object-fill"
           />
           <div className="flex-grow text-center lg:text-left z-10">
             <h2 className="text-2xl font-medium lg:text-3xl">
