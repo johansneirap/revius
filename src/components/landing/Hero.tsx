@@ -10,10 +10,10 @@ const Hero = () => {
     <>
       <RegisterModal isOpen={isOpen} onOpenChange={onOpenChange} />
       <Container className="flex flex-wrap ">
-        <div className="flex items-center w-full lg:w-1/2">
+        <div className="flex items-center w-full lg:w-1/2 lg:mt-12">
           <div className="max-w-2xl mb-8">
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
-              Revius al rescate de los compulsivos!
+            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 dark:text-slate-100 lg:text-6xl lg:leading-tight xl:text-7xl xl:leading-tight">
+              Transforma tu experiencia de compras en línea
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
               Revius es un servicio desde la comunidad para la comunidad, que te
